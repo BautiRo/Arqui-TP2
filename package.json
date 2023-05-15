@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "artillery": "^2.0.0-18",
+    "artillery-plugin-publish-metrics": "^2.0.0"
+  }
+}

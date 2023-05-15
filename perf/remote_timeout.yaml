@@ -1,0 +1,25 @@
+config:
+  target: "{{ $processEnvironment.TARGET }}"
+  http:
+    extendedMetrics: true
+    timeout: 30
+    pool: 50
+  phases:
+    - duration: 60
+      arrivalRate: 1
+    - duration: 60
+      arrivalRate: 2
+    - duration: 60
+      arrivalRate: 3
+  plugins:
+    publish-metrics:
+      - type: datadog
+        apiKey: "{{ $processEnvironment.DATADOG_API_KEY }}"
+        prefix: "artillery."
+        tags:
+          - "test:remote"
+
+scenarios:
+  - flow:
+    - get:
+        url: '/remote'

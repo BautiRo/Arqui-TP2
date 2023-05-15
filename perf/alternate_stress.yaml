@@ -1,0 +1,24 @@
+config:
+  target: "{{ $processEnvironment.TARGET }}"
+
+  pool: 50
+  phases:
+    - duration: 30
+      arrivalRate: 50
+    - duration: 30
+      arrivalRate: 150
+    - duration: 30
+      arrivalRate: 200
+      
+  plugins:
+    publish-metrics:
+      - type: datadog
+        apiKey: "{{ $processEnvironment.DATADOG_API_KEY }}"
+        prefix: "artillery."
+        tags:
+          - "test:alternate:stress"
+
+scenarios:
+  - flow:
+    - get:
+        url: '/alternate'
