@@ -1,8 +1,3 @@
-# Punto de partida para el TP 2 de Arquitectura de Software (75.73) del 1er cuatrimestre de 2022
-
-> La fecha de entrega para el informe y el código será el __*jueves 30/06/2022 a las 17:59hs*__.
-> La misma herramienta de GitHub Classroom nos va a mostrar el último commit que hayan hecho sobre `main` hasta ese momento, con lo que es un deadline fijo y estricto. :warning: :bangbang:
-
 ## Contexto
 
 Para este Trabajo, nuestro servicio será una app hecha en Node que consumirá otro servicio (supuestamente externo, es decir, no se encuentra bajo nuestro control), hecho en Python. Nuestra aplicación tiene un endpoint que hace un passthrough al servicio externo.
